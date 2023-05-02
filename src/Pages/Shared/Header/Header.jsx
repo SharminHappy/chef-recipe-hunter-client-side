@@ -17,15 +17,9 @@ const Header = () => {
                             <Link to='/blog' className='text-decoration-none text-secondary fw-semibold'>Blog</Link>
                         </Nav>
                         <Nav>
-                            
-                                
-                               
-                                     <Button style={{ backgroundColor: 'greenyellow', border: 'none' }} className='fw-semibold px-4'><Link to='/login'>Login</Link></Button>
-                           
-                               
-
-
-                            
+                            <Button style={{ backgroundColor: 'greenyellow', border: 'none' }} className='fw-semibold px-4'>
+                                <Link to='/login'>Login</Link>
+                            </Button>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
