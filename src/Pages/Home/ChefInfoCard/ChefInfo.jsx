@@ -17,9 +17,9 @@ const ChefInfo = ({ cafeInfo }) => {
                             <p  className='fs-5'>Experience:{experience}</p>
                             <p className='fs-5'>Recipe:{recipe}</p>
                         </Card.Text>
-                        <div className='d-flex gap-5 '>
+                        <div className='d-flex gap-5'>
                         <Button style={{ backgroundColor: 'greenyellow', border: 'none',width:'100' }} className='fw-semibold'>
-                            <Link to='/view' className='text-decoration-none text-white fs-5'>View Recipes</Link>
+                            <Link to={`/viewChefRecipes/${id}`} className='text-decoration-none text-white fs-5'>View Recipes</Link>
                         </Button>
                         <p className='fs-5'><FcLike/>{likes}</p>
         

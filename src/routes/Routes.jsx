@@ -1,8 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layouts/Main";
 
-import Login from "../Pages/Login/Login";
+
 import Home from "../Pages/Home/Home/Home";
+import ViewChefRecipes from "../Pages/ViewChefRecipes/ViewChefRecipes";
+import ChefRecipes from "../Pages/ChefRecipes/ChefRecipes";
+
 
 const router =createBrowserRouter([
     {
@@ -13,12 +16,22 @@ const router =createBrowserRouter([
                 path:'/',
                 element:<Home></Home>,
             },
+            
+        ]
+    },
+    {
+        path:'viewChefRecipes',
+        element:<ViewChefRecipes></ViewChefRecipes>,
+        children:[
             {
-                path:'/login',
-                element:<Login></Login>,
+                path:'/viewChefRecipes/:id',
+                element:<ChefRecipes></ChefRecipes>,
+                loader:({params})=>fetch(`http://localhost:5000/viewChefRecipes/${params.id}`)
             }
         ]
     }
+
+   
 ])
 
 export default router;
