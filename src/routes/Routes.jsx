@@ -5,6 +5,8 @@ import Main from "../Layouts/Main";
 import Home from "../Pages/Home/Home/Home";
 import ViewChefRecipes from "../Pages/ViewChefRecipes/ViewChefRecipes";
 import ChefRecipes from "../Pages/ChefRecipes/ChefRecipes";
+import Recipe from "../Pages/Recipe/Recipe";
+import RecipeDetails from "../Pages/Recipe/RecipeDetails";
 
 
 const router =createBrowserRouter([
@@ -29,6 +31,18 @@ const router =createBrowserRouter([
                 loader:({params})=>fetch(`http://localhost:5000/viewChefRecipes/${params.id}`)
             }
         ]
+    },
+    {
+        path:'details',
+        element:<Recipe></Recipe>,
+        children:[
+            {
+                path:':id',
+                element:<RecipeDetails></RecipeDetails>,
+                loader:({params})=>fetch(`http://localhost:5000/details/${params.id}`)
+            }
+        ]
+
     }
 
    

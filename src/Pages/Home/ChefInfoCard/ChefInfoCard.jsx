@@ -15,7 +15,7 @@ const ChefInfoCard = () => {
     return (
         <div className='mt-5 mb-5'>
             <h2  className='text-center'> Chef Information</h2>
-            <div className='row  row-cols-sm-1 row-cols-lg-3 hover-overlay hover-zoom hover-shadow'>
+            <div className='row  row-cols-sm-1 row-cols-lg-3'>
             {
                 chefsInfo.map(chefInfo=><ChefInfo
                 key={chefInfo.id}

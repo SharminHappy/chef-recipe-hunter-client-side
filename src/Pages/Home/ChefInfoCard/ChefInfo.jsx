@@ -6,10 +6,10 @@ import { FcLike } from "react-icons/fc";
 const ChefInfo = ({ cafeInfo }) => {
     const { img, id, name, experience, recipe, likes } = cafeInfo;
     return (
-<Container className='mx-auto px-5 '>
+<Container className='mx-auto px-5'>
         <Row className='mt-5'>
             <Col>
-                <Card style={{ width: '20rem'}}>
+                <Card style={{ width: '20rem'}} >
                     <Card.Img variant="top" src={img} />
                     <Card.Body>
                         <Card.Title className='fw-bold fs-3'>{name}</Card.Title>
