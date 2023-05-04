@@ -4,6 +4,8 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { signInWithPopup } from 'firebase/auth';
+
 
 
 const Login = () => {
@@ -13,12 +15,23 @@ const Login = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-    const navigate=useNavigate();
-    const location=useLocation();
-    console.log('login page location',location);
-    const from=location.state?.from?.pathname || '/'
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log('login page location', location);
+    const from = location.state?.from?.pathname || '/'
 
-
+    // // google
+    // // const provider = new GoogleAuthProvider();
+    //  const handlerGoogleLogIn=()=>{
+    //     googleLogin(provider)
+    //     .then(result=>{
+    //         const user=result.user;
+    //         console.log(user);
+    //     })
+    //     .catch(error=>{
+    //         console.log('error',error.message)
+    //     })
+    //  }
 
     const handlerLogin = event => {
         event.preventDefault();
@@ -49,7 +62,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                navigate(from,{replace:true});
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error);
@@ -82,7 +95,16 @@ const Login = () => {
                 <p className="text-success">
                     {success}
                 </p>
+
             </Form>
+            <div className='d-flex gap-5'>
+                <Button onClick={handlerGoogleLogIn} variant="primary">
+                    Google Login
+                </Button>
+                <Button variant="primary">
+                    GitHub Login
+                </Button>
+            </div>
         </Container>
     )
 
