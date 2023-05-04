@@ -7,7 +7,9 @@ const ViewChefRecipes = () => {
     return (
         <div>
             <Header></Header>
-            <Outlet></Outlet>
+            <div style={{minHeight:100}}>
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

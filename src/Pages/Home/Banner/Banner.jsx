@@ -12,7 +12,7 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h4>“Cooking is not difficult. Everyone has taste, even if they don’t realize it. Even if you’re not a great chef, there’s nothing to stop you understanding the difference between what tastes good and what doesn’t.”
+                        <h4>“Cooking is not difficult. Everyone has taste, even if they do not realize it. Even if you’re not a great chef, there’s nothing to stop you understanding the difference between what tastes good and what doesn’t.”
                           <br></br><small>- Gerard Depardieu</small></h4>
                     </Carousel.Caption>
                 </Carousel.Item>

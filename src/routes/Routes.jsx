@@ -7,6 +7,9 @@ import ViewChefRecipes from "../Pages/ViewChefRecipes/ViewChefRecipes";
 import ChefRecipes from "../Pages/ChefRecipes/ChefRecipes";
 import Recipe from "../Pages/Recipe/Recipe";
 import RecipeDetails from "../Pages/Recipe/RecipeDetails";
+import ChefInfo from "../Pages/Home/ChefInfoCard/ChefInfo";
+import ChefInfoCard from "../Pages/Home/ChefInfoCard/ChefInfoCard";
+import Error from "../Pages/ErrorPage/Error";
 
 
 const router =createBrowserRouter([
@@ -16,7 +19,7 @@ const router =createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<Home></Home>,
+                element:<ChefInfoCard></ChefInfoCard>,
             },
             
         ]
@@ -43,6 +46,10 @@ const router =createBrowserRouter([
             }
         ]
 
+    },
+    {
+        path:'*',
+        element:<Error></Error>
     }
 
    

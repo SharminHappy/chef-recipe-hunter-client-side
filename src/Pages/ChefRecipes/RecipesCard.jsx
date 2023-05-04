@@ -19,7 +19,7 @@ const RecipesCard = ({ data,chef }) => {
                     </Card.Text>
                     <div className='text-center'>
                         <Button style={{ backgroundColor: 'greenyellow', border: 'none' }} className='fw-semibold '>
-                            <Link to={`/details/${happy}`} className='text-decoration-none text-white fs-5'>Get Recipes</Link>
+                            <Link to={`/details/${happy}`} className='text-decoration-none text-white fs-5'>Get Recipe</Link>
                         </Button>
                     </div>
                 </Card.Body>
