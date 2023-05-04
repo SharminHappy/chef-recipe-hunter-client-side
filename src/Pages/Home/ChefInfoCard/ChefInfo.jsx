@@ -17,13 +17,14 @@ const ChefInfo = ({ cafeInfo }) => {
                             <p  className='fs-5'>Experience:{experience}</p>
                             <p className='fs-5'>Recipe:{recipe}</p>
                         </Card.Text>
-                        <div className='d-flex gap-5'>
-                        <Button style={{ backgroundColor: 'greenyellow', border: 'none',width:'100' }} className='fw-semibold'>
-                            <Link to={`/viewChefRecipes/${id}`} className='text-decoration-none text-white fs-5'>View Recipes</Link>
-                        </Button>
-                        <p className='fs-5'><FcLike/>{likes}</p>
-        
+                        <Card.Text className='d-flex justify-content-between'>                      
+                            <Link to={`/viewChefRecipes/${id}`} style={{ backgroundColor: 'greenyellow', border: 'none',width:'100' }} className='text-decoration-none text-center text-white fs-5 fw-semibold px-2 py-1 rounded'>View Recipes</Link>                      
+                        <div className='fs-5 gap-3'>
+                          <FcLike className='fs-5'/>
+                          {likes}
                         </div>
+        
+                        </Card.Text>
                     </Card.Body>
                 </Card>
             </Col>

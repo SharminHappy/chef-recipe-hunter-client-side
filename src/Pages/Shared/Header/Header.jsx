@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
+import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
 
+    const { user,logOut } = useContext(AuthContext);
+    const handleLogOut=()=>{
+        logOut()
+        .then()
+        .catch(error=>console.log(error.message));
+    }
 
-    
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -16,13 +23,27 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto gap-3">
-                            <Link to='/' activeClassName="active" className='text-decoration-none text-secondary fw-semibold'>Home</Link>
+                            <Link to='/' className='text-decoration-none text-secondary fw-semibold'>Home</Link>
                             <Link to='/blog' className='text-decoration-none text-secondary fw-semibold'>Blog</Link>
                         </Nav>
                         <Nav>
-                        <Button style={{ backgroundColor: 'greenyellow', border: 'none' }} className='fw-semibold '>
-                            <Link to='/login' className='text-decoration-none text-white fs-5'>Login</Link>
-                        </Button>
+
+                            <Nav.Link>
+                                {
+                                    user && <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
+
+                                }
+                            </Nav.Link>
+
+                            {
+                                user ?
+                                    <Button onClick={handleLogOut} variant='secondary' style={{ backgroundColor: 'greenyellow', border: 'none',width:'100' }} className='text-decoration-none text-center text-white fs-5 fw-semibold  rounded'>Logout</Button> :
+                                    <Link to='/login'>
+                                        <Button variant='secondary'style={{ backgroundColor: 'greenyellow', border: 'none',width:'100' }} className='text-decoration-none text-center text-white fs-5 fw-semibold   rounded'>Login</Button>
+                                    </Link>
+                            }
+
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
