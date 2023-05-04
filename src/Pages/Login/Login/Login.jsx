@@ -4,7 +4,7 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { signInWithPopup } from 'firebase/auth';
+// import { signInWithPopup } from 'firebase/auth';
 
 
 
@@ -98,7 +98,7 @@ const Login = () => {
 
             </Form>
             <div className='d-flex gap-5'>
-                <Button onClick={handlerGoogleLogIn} variant="primary">
+                <Button  variant="primary">
                     Google Login
                 </Button>
                 <Button variant="primary">

@@ -15,6 +15,7 @@ import Login from "../Pages/Login/Login/Login";
 import Register from "../Pages/Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Terms from "../Pages/Shared/Terms/Terms";
+import Blog from "../Pages/Blog/Blog";
 
 
 
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <ChefInfoCard></ChefInfoCard>,
             },
+            {
+                path:'/blog',
+                element:<Blog></Blog>
+            }
             
 
 
