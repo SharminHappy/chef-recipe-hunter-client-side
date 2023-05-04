@@ -4,10 +4,12 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../../firebase/firebase.config';
 // import { signInWithPopup } from 'firebase/auth';
 
 
-
+const auth = getAuth(app);
 const Login = () => {
 
     const { signIn } = useContext(AuthContext);
@@ -20,18 +22,18 @@ const Login = () => {
     console.log('login page location', location);
     const from = location.state?.from?.pathname || '/'
 
-    // // google
-    // // const provider = new GoogleAuthProvider();
-    //  const handlerGoogleLogIn=()=>{
-    //     googleLogin(provider)
-    //     .then(result=>{
-    //         const user=result.user;
-    //         console.log(user);
-    //     })
-    //     .catch(error=>{
-    //         console.log('error',error.message)
-    //     })
-    //  }
+    
+     const provider = new GoogleAuthProvider();
+     const handlerGoogleLogIn=()=>{
+        signInWithPopup(auth,provider)
+        .then(result=>{
+            const user=result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            console.log('error',error.message)
+        })
+     }
 
     const handlerLogin = event => {
         event.preventDefault();
@@ -98,7 +100,7 @@ const Login = () => {
 
             </Form>
             <div className='d-flex gap-5'>
-                <Button  variant="primary">
+                <Button onClick={handlerGoogleLogIn}  variant="primary">
                     Google Login
                 </Button>
                 <Button variant="primary">
