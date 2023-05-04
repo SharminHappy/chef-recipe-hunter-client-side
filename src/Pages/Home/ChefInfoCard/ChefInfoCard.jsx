@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import ChefInfo from './ChefInfo';
 import Banner from '../Banner/Banner';
 import { Spinner } from 'react-bootstrap';
+import HealthyMenu from '../../../../public/HealthyMenu/HealthyMenu';
+import MostFavouriteRecipes from '../../Recipe/MostFavouriteRecipes/MostFavouriteRecipes';
 
 const ChefInfoCard = () => {
     const [chefsInfo, setChefInfo] = useState([]);
@@ -29,9 +31,10 @@ const ChefInfoCard = () => {
     return (
         <div>
             <Banner></Banner>
+            <HealthyMenu></HealthyMenu>
             
             <div className='mt-5 mb-5'>
-                <h2 className='text-center'> Chef Information</h2>
+                <h2 className='text-center'>Meet Our  Chefs </h2>
                 <div className='row  row-cols-sm-1 row-cols-lg-3'>
                     {
                         chefsInfo.map(chefInfo => <ChefInfo
@@ -44,6 +47,7 @@ const ChefInfoCard = () => {
                     }
                 </div>
             </div>
+            <MostFavouriteRecipes></MostFavouriteRecipes>
         </div>
 
     );
