@@ -10,16 +10,21 @@ const ChefInfoCard = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        setLoading(true)
-        fetch('https://chef-recipe-hunter-server-ruddy.vercel.app/chefsInfo')
-            .then(res => res.json())
-            .then(data => setChefInfo(data))
-            .catch(error => console.log(error.message))
-            .finally(() => {
+        const fetchData = async () => {
+            try {
+                setLoading(true);
+                const response = await fetch('https://chef-recipe-hunter-server-ruddy.vercel.app/chefsInfo');
+                const data = await response.json();
+                setChefInfo(data);
+            } catch (error) {
+                console.log(error.message);
+            } finally {
                 setLoading(false);
-            })
-
-    }, [])
+            }
+        };
+        fetchData();
+    }, []);
+    
     if (loading) {
         return <Spinner></Spinner>;
 
