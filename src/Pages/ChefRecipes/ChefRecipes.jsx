@@ -32,8 +32,7 @@ const ChefRecipes = () => {
                 </div>
             <div>
                 {
-                    data.map(data =>
-                        <RecipesCard
+                    data.map(data =><RecipesCard
                             key={data.recipe_id}
                             data={data}
                             chef={id}

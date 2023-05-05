@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import ChefInfo from './ChefInfo';
 import Banner from '../Banner/Banner';
 import { Spinner } from 'react-bootstrap';
@@ -37,7 +36,7 @@ const ChefInfoCard = () => {
                 <h2 className='text-center'>Meet Our  Chefs </h2>
                 <div className='row  row-cols-sm-1 row-cols-lg-3'>
                     {
-                        chefsInfo.map(chefInfo => <ChefInfo
+                        chefsInfo.map(chefInfo =><ChefInfo
                             key={chefInfo.id}
                             cafeInfo={chefInfo}
                         >
