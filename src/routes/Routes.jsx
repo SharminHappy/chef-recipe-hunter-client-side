@@ -64,7 +64,15 @@ const router = createBrowserRouter([
             {
                 path: '/viewChefRecipes/:id',
                 element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://chef-recipe-hunter-server-ruddy.vercel.app/${params.id}`)
+                loader:async({ params }) =>{ 
+                    try {
+                        const response = await fetch(`https://chef-recipe-hunter-server-ruddy.vercel.app/viewChefRecipes/${params.id}`);
+                        const data = await response.json();
+                        return data;
+                    } catch (error) {
+                        console.log(error.message);
+                    }
+                }
             }
         ]
     },
@@ -75,7 +83,15 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <RecipeDetails></RecipeDetails>,
-                loader: ({ params }) => fetch(`https://chef-recipe-hunter-server-ruddy.vercel.app/details/${params.id}`)
+                loader: async ({ params }) => {
+                    try {
+                        const response = await fetch(`https://chef-recipe-hunter-server-ruddy.vercel.app/details/${params.id}`);
+                        const data = await response.json();
+                        return data;
+                    } catch (error) {
+                        console.log(error.message);
+                    }
+                }
             }
         ]
 
