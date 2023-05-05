@@ -21,7 +21,7 @@ const RecipeDetail = ({ recipeData }) => {
             <Card.Img variant="top" src={image_url} height={700} />
             <Card.Body>
                 <Card.Title className='text-center fw-bold'><h1>{recipe_name}</h1></Card.Title>
-                <Card.Text className='mt-3'>
+                <div className='mt-3'>
                     <h4>INGREDIENT LIST</h4>
                     <ol className='fs-5'>
                         <li>{ingredients.ingredients_1}</li>
@@ -31,9 +31,9 @@ const RecipeDetail = ({ recipeData }) => {
                         <li>{ingredients.ingredients_5}</li>
 
                     </ol>
+                </div>
 
-                </Card.Text>
-                <Card.Text className='mt-3'>
+                <div className='mt-3'>
 
                     <h4>COOKING METHOD:</h4>
                     <ul >
@@ -41,8 +41,8 @@ const RecipeDetail = ({ recipeData }) => {
                         <li><span className='fw-bold'>STEP-1:</span>{cooking_method.method_2}</li>
                         <li><span className='fw-bold'>STEP-1:</span>{cooking_method.method_3}</li>
                     </ul>
+                </div>
 
-                </Card.Text>
                 <div className='d-flex justify-content-between mt-5'>
                     <div >
                         <Button onClick={onClick} disabled={disabled} style={{ backgroundColor: 'greenyellow', border: 'none' }} variant="primary" className='mx-auto px-5 fs-5'>

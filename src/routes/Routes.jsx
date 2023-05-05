@@ -64,7 +64,7 @@ const router = createBrowserRouter([
             {
                 path: '/viewChefRecipes/:id',
                 element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/viewChefRecipes/${params.id}`)
+                loader: ({ params }) => fetch(`https://chef-recipe-hunter-server-sharminhappy.vercel.app/viewChefRecipes/${params.id}`)
             }
         ]
     },
@@ -75,7 +75,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <RecipeDetails></RecipeDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/details/${params.id}`)
+                loader: ({ params }) => fetch(`https://chef-recipe-hunter-server-sharminhappy.vercel.app/details/${params.id}`)
             }
         ]
 

@@ -12,7 +12,7 @@ const ChefInfoCard = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch('http://localhost:5000/chefsInfo')
+        fetch('https://chef-recipe-hunter-server-sharminhappy.vercel.app/chefsInfo')
             .then(res => res.json())
             .then(data => setChefInfo(data))
             .catch(error => console.log(error.message))
@@ -32,7 +32,7 @@ const ChefInfoCard = () => {
         <div>
             <Banner></Banner>
             <HealthyMenu></HealthyMenu>
-            
+
             <div className='mt-5 mb-5'>
                 <h2 className='text-center'>Meet Our  Chefs </h2>
                 <div className='row  row-cols-sm-1 row-cols-lg-3'>
